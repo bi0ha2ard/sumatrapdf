@@ -2012,13 +2012,13 @@ void GetFixedPageUiColors(COLORREF& text, COLORREF& bg)
         text = GetSysColor(COLOR_WINDOWTEXT);
         bg = GetSysColor(COLOR_WINDOW);
     }
-    else if (gGlobalPrefs->fixedPageUI.nightMode) {
-        text = gGlobalPrefs->fixedPageUI.nightModeTextColor;
-        bg = gGlobalPrefs->fixedPageUI.nightModeBackgroundColor;
-	}
     else {
         text = gGlobalPrefs->fixedPageUI.textColor;
         bg = gGlobalPrefs->fixedPageUI.backgroundColor;
+    }
+    if (gGlobalPrefs->fixedPageUI.nightMode) {
+        text = gGlobalPrefs->fixedPageUI.nightModeTextColor;
+        bg = gGlobalPrefs->fixedPageUI.nightModeBackgroundColor;
     }
     if (gGlobalPrefs->fixedPageUI.invertColors) {
         std::swap(text, bg);
